@@ -40,7 +40,6 @@ mse1c=mean((basicFeaturestest4$V281 - pred1c$fit)^2)
 mse1d=mean((basicFeatures$V281 - pred1d$fit)^2)
 
 
-
 ##logisticregression
 meanTarget <- mean(basicFeatures[,V281])
 
@@ -61,11 +60,11 @@ pred3b<- predict(fit3.train,basicFeaturestest3,se.fit = TRUE)
 pred3c<- predict(fit3.train,basicFeaturestest4,se.fit = TRUE)
 pred3d<- predict(fit3.train,basicFeatures,se.fit = TRUE)
 
-mean3=mean((basicFeaturestest1$V281 - pred3$fit)^2)
-mean3a=mean((basicFeaturestest2$V281- pred3a$fit)^2)
-mean3b=mean((basicFeaturestest3$V281 - pred3b$fit)^2)
-mean3c=mean((basicFeaturestest4$V281 - pred3c$fit)^2)
-mean3d=mean((basicFeatures$V281 - pred3d$fit)^2)
+mse3=mean((basicFeaturestest1$V281 - pred3$fit)^2)
+mse3a=mean((basicFeaturestest2$V281- pred3a$fit)^2)
+mse3b=mean((basicFeaturestest3$V281 - pred3b$fit)^2)
+mse3c=mean((basicFeaturestest4$V281 - pred3c$fit)^2)
+mse3d=mean((basicFeatures$V281 - pred3d$fit)^2)
 
 predictionsExp1 = sapply(pred3$fit, function(x) {ifelse(x > .5, 1, 0)})
 
@@ -99,11 +98,11 @@ pred2c<-predict(fit2.train,textualFeaturestest4,se.fit = TRUE)
 pred2d<-predict(fit2.train,textualFeatures,se.fit = TRUE)
 
 
-mean2=mean((textualFeaturestest1$V281 - pred2$fit)^2)
-mean2a=mean((textualFeaturestest2$V281 - pred2a$fit)^2)
-mean2b=mean((textualFeaturestest3$V281 - pred2b$fit)^2)
-mean2c=mean((textualFeaturestest4$V281 - pred2c$fit)^2)
-mean2d=mean((textualFeatures$V281 - pred2d$fit)^2)
+mse2=mean((textualFeaturestest1$V281 - pred2$fit)^2)
+mse2a=mean((textualFeaturestest2$V281 - pred2a$fit)^2)
+mse2b=mean((textualFeaturestest3$V281 - pred2b$fit)^2)
+mse2c=mean((textualFeaturestest4$V281 - pred2c$fit)^2)
+mse2d=mean((textualFeatures$V281 - pred2d$fit)^2)
 
 
 ###logistic regression
@@ -130,11 +129,11 @@ pred4b<- predict(fit4.train,textualFeaturestest3,se.fit = TRUE)
 pred4c<- predict(fit4.train,textualFeaturestest4,se.fit = TRUE)
 pred4d<- predict(fit4.train,textualFeatures,se.fit = TRUE)
 
-mean4=mean((textualFeaturestest1$V281 - pred4$fit)^2)
-mean4a=mean((textualFeaturestest2$V281- pred4a$fit)^2)
-mean4b=mean((textualFeaturestest3$V281 - pred4b$fit)^2)
-mean4c=mean((textualFeaturestest4$V281 - pred4c$fit)^2)
-mean4d=mean((textualFeatures$V281 - pred4d$fit)^2)
+mse4=mean((textualFeaturestest1$V281 - pred4$fit)^2)
+mse4a=mean((textualFeaturestest2$V281- pred4a$fit)^2)
+mse4b=mean((textualFeaturestest3$V281 - pred4b$fit)^2)
+mse4c=mean((textualFeaturestest4$V281 - pred4c$fit)^2)
+mse4d=mean((textualFeatures$V281 - pred4d$fit)^2)
 
 
 

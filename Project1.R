@@ -28,30 +28,18 @@ basicFeaturestest4<-fread("blogData_test-2012.03.31.01_00.csv",select = c(51:60,
 
 
 pred1<-predict(fit1.train,basicFeaturestest1,se.fit = TRUE)
-pred1$fit
-pred1$se.fit
-
-pred1$df
-pred1$residual.scale
-
-rss=mean((basicFeaturestest1$V281 - pred1$fit)^2)
-rss
-
 pred1a <- predict(fit1.train,basicFeaturestest2,se.fit = TRUE)
 pred1b<- predict(fit1.train,basicFeaturestest3,se.fit = TRUE)
 pred1c<- predict(fit1.train,basicFeaturestest4,se.fit = TRUE)
 pred1d<- predict(fit1.train,basicFeatures,se.fit = TRUE)
 
-rss1a=mean((basicFeaturestest2$V281-pred1a$fit)^2)
-rss1a
+mse=mean((basicFeaturestest1$V281 - pred1$fit)^2)
+mse1a=mean((basicFeaturestest2$V281-pred1a$fit)^2)
+mse1b=mean((basicFeaturestest3$V281 - pred1b$fit)^2)
+mse1c=mean((basicFeaturestest4$V281 - pred1c$fit)^2)
+mse1d=mean((basicFeatures$V281 - pred1d$fit)^2)
 
-rss1b=mean((basicFeaturestest3$V281 - pred1b$fit)^2)
-rss1c=mean((basicFeaturestest4$V281 - pred1c$fit)^2)
-rss1d=mean((basicFeatures$V281 - pred1d$fit)^2)
 
-rss1b
-rss1c
-rss1d
 
 ##logisticregression
 meanTarget <- mean(basicFeatures[,V281])
@@ -73,11 +61,11 @@ pred3b<- predict(fit3.train,basicFeaturestest3,se.fit = TRUE)
 pred3c<- predict(fit3.train,basicFeaturestest4,se.fit = TRUE)
 pred3d<- predict(fit3.train,basicFeatures,se.fit = TRUE)
 
-rss3=mean((basicFeaturestest1$V281 - pred3$fit)^2)
-rss3a=mean((basicFeaturestest2$V281- pred3a$fit)^2)
-rss3b=mean((basicFeaturestest3$V281 - pred3b$fit)^2)
-rss3c=mean((basicFeaturestest4$V281 - pred3c$fit)^2)
-rss3d=mean((basicFeatures$V281 - pred3d$fit)^2)
+mean3=mean((basicFeaturestest1$V281 - pred3$fit)^2)
+mean3a=mean((basicFeaturestest2$V281- pred3a$fit)^2)
+mean3b=mean((basicFeaturestest3$V281 - pred3b$fit)^2)
+mean3c=mean((basicFeaturestest4$V281 - pred3c$fit)^2)
+mean3d=mean((basicFeatures$V281 - pred3d$fit)^2)
 
 predictionsExp1 = sapply(pred3$fit, function(x) {ifelse(x > .5, 1, 0)})
 
@@ -111,11 +99,11 @@ pred2c<-predict(fit2.train,textualFeaturestest4,se.fit = TRUE)
 pred2d<-predict(fit2.train,textualFeatures,se.fit = TRUE)
 
 
-rss2=mean((textualFeaturestest1$V281 - pred2$fit)^2)
-rss2a=mean((textualFeaturestest2$V281 - pred2a$fit)^2)
-rss2b=mean((textualFeaturestest3$V281 - pred2b$fit)^2)
-rss2c=mean((textualFeaturestest4$V281 - pred2c$fit)^2)
-rss2d=mean((textualFeatures$V281 - pred2d$fit)^2)
+mean2=mean((textualFeaturestest1$V281 - pred2$fit)^2)
+mean2a=mean((textualFeaturestest2$V281 - pred2a$fit)^2)
+mean2b=mean((textualFeaturestest3$V281 - pred2b$fit)^2)
+mean2c=mean((textualFeaturestest4$V281 - pred2c$fit)^2)
+mean2d=mean((textualFeatures$V281 - pred2d$fit)^2)
 
 
 ###logistic regression
@@ -142,11 +130,11 @@ pred4b<- predict(fit4.train,textualFeaturestest3,se.fit = TRUE)
 pred4c<- predict(fit4.train,textualFeaturestest4,se.fit = TRUE)
 pred4d<- predict(fit4.train,textualFeatures,se.fit = TRUE)
 
-rss4=mean((textualFeaturestest1$V281 - pred4$fit)^2)
-rss4a=mean((textualFeaturestest2$V281- pred4a$fit)^2)
-rss4b=mean((textualFeaturestest3$V281 - pred4b$fit)^2)
-rss4c=mean((textualFeaturestest4$V281 - pred4c$fit)^2)
-rss4d=mean((textualFeatures$V281 - pred4d$fit)^2)
+mean4=mean((textualFeaturestest1$V281 - pred4$fit)^2)
+mean4a=mean((textualFeaturestest2$V281- pred4a$fit)^2)
+mean4b=mean((textualFeaturestest3$V281 - pred4b$fit)^2)
+mean4c=mean((textualFeaturestest4$V281 - pred4c$fit)^2)
+mean4d=mean((textualFeatures$V281 - pred4d$fit)^2)
 
 
 
